@@ -1,0 +1,6 @@
+employee:
+  name: Jo
+  salary: 30000
+  address: 
+    city: Bangalore
+    state: Karnataka 
