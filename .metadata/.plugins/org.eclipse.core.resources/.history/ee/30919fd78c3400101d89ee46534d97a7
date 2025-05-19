@@ -1,0 +1,17 @@
+package com.intuit.autowire;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class ShapeFactory {
+
+	// inject an object of IShape
+	 @Autowired
+	 IShape shape;
+
+	 public void printArea(int x, int y) {
+		 System.out.println("printing Area");
+		 shape.calcArea(x, y);
+	 }
+}

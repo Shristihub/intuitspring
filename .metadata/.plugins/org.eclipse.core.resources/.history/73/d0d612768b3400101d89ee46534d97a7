@@ -1,0 +1,5 @@
+package com.intuit.autowire;
+
+public class ShapeFactory {
+
+}

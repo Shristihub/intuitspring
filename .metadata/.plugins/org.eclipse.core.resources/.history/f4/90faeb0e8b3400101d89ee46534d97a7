@@ -1,0 +1,6 @@
+package com.intuit.interfaces;
+
+public interface IShape {
+
+	void calcArea(int x, int y);
+}

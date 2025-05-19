@@ -1,0 +1,12 @@
+package com.intuit.basics;
+
+public class EmpMain {
+
+	public static void main(String[] args) {
+		Employee employee = new Employee();
+		employee.setEmpName("Sri");
+		employee.setSalary(20000);
+		employee.printDetails();
+	}
+
+}

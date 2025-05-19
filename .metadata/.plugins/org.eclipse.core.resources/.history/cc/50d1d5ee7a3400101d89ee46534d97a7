@@ -1,0 +1,22 @@
+package com.intuit.basics;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class EmpMain {
+
+	public static void main(String[] args) {
+		
+		// create the IoC Container
+		ApplicationContext context = new AnnotationConfigApplicationContext("com.intuit");
+		// get the spring bean (java object) from the IoC container
+		Employee employee = (Employee)context.getBean("employee");
+		employee.setEmpName("Sri");
+		employee.setSalary(20000);
+		employee.printDetails();
+		
+		Employee employee1 = context.getBean("employee", Employee.class);
+		System.out.println(employee1);
+	}
+
+}

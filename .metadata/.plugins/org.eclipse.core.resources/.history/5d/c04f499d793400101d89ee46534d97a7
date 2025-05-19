@@ -1,0 +1,9 @@
+package com.intuit.basics;
+
+
+public class Employee {
+
+	private String empName;
+	private double salary;
+	
+}
