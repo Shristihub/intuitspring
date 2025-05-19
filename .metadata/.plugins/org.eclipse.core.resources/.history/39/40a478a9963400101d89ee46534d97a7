@@ -1,0 +1,24 @@
+package com.intuit.constr;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.intuit.basics.Employee;
+
+public class StudentMain {
+
+	public static void main(String[] args) {
+		
+		// create the IoC Container
+		ApplicationContext context = new AnnotationConfigApplicationContext("com.intuit");
+		// get the spring bean (java object) from the IoC container
+		Student student = context.getBean("student", Student.class);
+		System.out.println(student);
+		System.out.println();
+		String[] beans = context.getBeanDefinitionNames();
+		for (String bean : beans) {
+			System.out.println(bean);
+		}
+	}
+
+}

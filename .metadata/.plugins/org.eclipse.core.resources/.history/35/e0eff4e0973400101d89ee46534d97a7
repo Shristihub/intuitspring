@@ -1,0 +1,38 @@
+package com.intuit.javabased;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
+
+@Configuration
+public class AppConfig {
+
+	//create bean definitions
+	@Bean // the bean name is getIndian;
+	Indian getIndian() {
+		return new Indian();
+	}
+	@Bean // the bean name is chinese;
+	Chinese chinese() {
+		return new Chinese();
+	}
+	
+	@Bean // the bean name is italian;
+	@Primary // to choose the specific bean
+	Italian italian() {
+		return new Italian();
+	}
+	
+	@Bean
+	Restaurant getRestaurant() {
+		Restaurant restaurant = new Restaurant();
+//		restaurant.setCuisine(chinese());
+		return restaurant;
+	}
+	
+}
+
+
+
+
+

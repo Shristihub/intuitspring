@@ -19,7 +19,6 @@ public class ShapeFactory {
 	 
 	 // autowiring by constructor
 	 IShape shapeObj;
-	 
 	 @Autowired	 
 	 public ShapeFactory(@Qualifier("square") IShape shapeObj) {
 		super();

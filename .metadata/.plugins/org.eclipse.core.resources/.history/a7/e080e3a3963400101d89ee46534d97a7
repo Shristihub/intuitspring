@@ -1,0 +1,12 @@
+package com.intuit.javabased;
+
+public class Restaurant {
+
+	
+	private ICuisine cuisine;
+	
+	public void printMenus() {
+		System.out.println("Menus of different cuisines");
+		cuisine.showMenus();
+	}
+}

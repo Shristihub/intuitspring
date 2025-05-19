@@ -1,0 +1,28 @@
+package com.intuit.autowire1;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class StudentDetails {
+	// by type
+	@Autowired
+	ICourse course;
+	
+	//by name
+	@Autowired
+	ICourse frontend;
+	
+	//by constr
+	ICourse cloudcourse;
+	
+	public String[] getCourses(String type) {
+		if(type.equals("b"))
+			return course.showCourses();
+		if(type.equals("f"))
+			return frontend.showCourses();
+		if(type.equals("cc"))
+			return cloudcourse.showCourses();
+		return new String[] {"no courses available"};
+	}
+}

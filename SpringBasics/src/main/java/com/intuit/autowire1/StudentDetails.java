@@ -1,0 +1,33 @@
+package com.intuit.autowire1;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component("studDetails")
+public class StudentDetails {
+	// by type
+	@Autowired
+	@Qualifier("backend")
+	ICourse course;
+	
+	//by name
+	@Autowired
+	ICourse frontend;
+	
+	//by constr
+	ICourse cloudcourse;
+	public StudentDetails(@Qualifier("cloud") ICourse cloudcourse) {
+		super();
+		this.cloudcourse = cloudcourse;
+	}
+	public String[] getCourses(String type) {
+		if(type.equals("b"))
+			return course.showCourses();
+		if(type.equals("f"))
+			return frontend.showCourses();
+		if(type.equals("cc"))
+			return cloudcourse.showCourses();
+		return new String[] {"no courses available"};
+	}
+}

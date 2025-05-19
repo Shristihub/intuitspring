@@ -1,0 +1,14 @@
+package com.intuit.javabased;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class Restaurant {
+
+	@Autowired
+	private ICuisine cuisine;
+	
+	public void printMenus() {
+		System.out.println("Menus of different cuisines");
+		cuisine.showMenus();
+	}
+}

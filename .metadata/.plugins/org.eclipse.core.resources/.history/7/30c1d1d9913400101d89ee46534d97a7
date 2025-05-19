@@ -1,0 +1,5 @@
+package com.intuit.autowire1;
+
+public class StudentDetails {
+
+}
